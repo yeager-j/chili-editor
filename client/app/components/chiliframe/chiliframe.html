@@ -1,0 +1,26 @@
+<div class="jumbotron" ng-if="!$ctrl.editorUrl">
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input id="userName" type="text" ng-model="$ctrl.userName" name="userName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" ng-model="$ctrl.password" name="password" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="itemID">ItemID</label>
+        <input id="itemID" type="text" ng-model="$ctrl.itemID" name="itemID" class="form-control">
+      </div>
+      <div class="form-group">
+        <button type="button" ng-click="$ctrl.getEditorUrl()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div ng-if="$ctrl.editorUrl">
+  <h1>API Key: {{ $ctrl.apiKey }}</h1>
+  <iframe ng-src="{{$ctrl.editorUrl}}" class="chiliframe"></iframe>
+</div>
